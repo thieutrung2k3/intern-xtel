@@ -41,3 +41,13 @@ COMMIT;
 
 SELECT * FROM employees;
 
+CREATE OR REPLACE PROCEDURE print_hello
+IS
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Xin chào! Đây là stored procedure đầu tiên');
+END print_hello;
+/
+
+-- Gọi procedure
+EXEC print_hello;
+

@@ -1,0 +1,41 @@
+
+--IN
+CREATE OR REPLACE PROCEDURE add_account(
+    p_account_id IN NUMBER,
+    p_username IN VARCHAR2,
+    p_passwords IN VARCHAR2,
+    p_active IN NUMBER,
+    p_role_id IN NUMBER
+)
+IS
+BEGIN
+    INSERT INTO accounts(account_id, username, passwords, active, role_id)
+    VALUES(p_account_id, p_username, p_passwords, p_active, p_role_id);
+    
+    COMMIT;
+END;
+
+BEGIN
+    add_account(11, 'user01', 'pass123', 1, 2);
+END;
+
+--IN  OUT
+CREATE OR REPLACE PROCEDURE get_username(
+    p_account_id IN NUMBER,
+    p_username OUT VARCHAR2
+)
+IS
+BEGIN
+    SELECT username INTO p_username
+    FROM accounts
+    WHERE account_id = p_account_id;
+END;
+
+DECLARE
+    l_username VARCHAR2(50);
+BEGIN
+    get_username(1, l_username); 
+    DBMS_OUTPUT.PUT_LINE('Username: ' || l_username);
+END;
+
+

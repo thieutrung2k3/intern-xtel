@@ -1,0 +1,27 @@
+SELECT * FROM employees;
+
+ALTER TABLE employees ADD (gender VARCHAR2(10));
+ALTER TABLE employees MODIFY gender NVARCHAR2(10);
+ALTER TABLE employees DROP COLUMN gender;
+
+UPDATE employees SET gender = 'Nam' WHERE emp_id = 1;
+UPDATE employees SET gender = 'Nam';
+
+SELECT * 
+FROM accounts a INNER JOIN account_project b
+ON a.account_id = b.account_id
+INNER JOIN projects p 
+ON b.project_id = p.project_id
+;
+
+SELECT emp_name, SUM(salary) AS sum_salary
+FROM employees
+WHERE gender = 'Nam'
+GROUP BY emp_name
+HAVING SUM(salary) > 10000;
+
+SELECT * FROM USER_TABLES;
+
+
+
+

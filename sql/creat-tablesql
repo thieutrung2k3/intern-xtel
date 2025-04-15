@@ -1,0 +1,40 @@
+CREATE TABLE roles (
+    role_id NUMBER PRIMARY KEY,
+    role_name VARCHAR2(20) NOT NULL,
+    description VARCHAR2(100) NOT NULL
+);
+
+CREATE TABLE accounts (
+    account_id NUMBER PRIMARY KEY,
+    username VARCHAR2(10) NOT NULL,
+    passwords VARCHAR2(30) NOT NULL,
+    active NUMBER(1) DEFAULT(0),
+    role_id NUMBER,
+    CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES roles(role_id)
+);
+
+CREATE TABLE profiles(
+    profiles_id NUMBER PRIMARY KEY,
+    full_name VARCHAR2(30) NOT NULL,
+    dob DATE NOT NULL,
+    gender VARCHAR2(10) NOT NULL,
+    address VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE projects(
+    project_id NUMBER PRIMARY KEY,
+    project_name VARCHAR(50) NOT NULL,
+    start_time DATE NOT NULL,
+    end_time DATE NOT NULL
+);
+
+CREATE TABLE account_project(
+    account_id NUMBER,
+    project_id NUMBER,
+    CONSTRAINT pk_acc_prj PRIMARY KEY (account_id, project_id),
+    CONSTRAINT fp_acc FOREIGN KEY (account_id) REFERENCES accounts(account_id),
+    CONSTRAINt fp_prj FOREIGN KEY (project_id) REFERENCES projects(project_id)
+)
+
+
+
