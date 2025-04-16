@@ -10,13 +10,11 @@ public class TCPClient {
     public static void main(String[] args) {
         String hostname = "localhost";
         int port = 1234;
-
         Scanner sc = new Scanner(System.in);
         String msg;
 
         try {
             while (true) {
-                // Mở kết nối mỗi lần gửi tin nhắn
                 try (Socket socket = new Socket(hostname, port);
                      OutputStream output = socket.getOutputStream();
                      PrintWriter writer = new PrintWriter(output, true);
@@ -25,15 +23,13 @@ public class TCPClient {
 
                     System.out.print("Enter message to send to server: ");
                     msg = sc.nextLine();
-                    writer.println(msg);  // Gửi thông điệp đến server
+                    writer.println(msg);
 
-                    // Nếu người dùng nhập "exit", thoát khỏi vòng lặp
                     if ("exit".equalsIgnoreCase(msg)) {
                         System.out.println("Closing connection...");
                         break;
                     }
 
-                    // Nhận phản hồi từ server
                     String response = reader.readLine();
                     System.out.println("Server response: " + response);
 

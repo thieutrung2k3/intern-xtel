@@ -1,0 +1,5 @@
+[2025-04-16 08:51:31] [INFO] This is info msg
+[2025-04-16 08:51:58] [WARN] This is warn msg.
+[2025-04-16 08:51:58] [DEBUG] This is debug msg
+[2025-04-16 08:51:58] [ERROR] This is error msg
+[2025-04-16 08:51:58] [INFO] This is info msg
