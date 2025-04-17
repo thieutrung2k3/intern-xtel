@@ -1,0 +1,8 @@
+2025-04-17 15:21:30 [main] INFO  logger.Program - Đây là thông báo info
+2025-04-17 15:21:30 [main] WARN  logger.Program - Đây là cảnh báo
+2025-04-17 15:21:30 [main] ERROR logger.Program - Đây là lỗi
+2025-04-17 15:21:30 [main] INFO  logger.Program - Người dùng admin đã đăng nhập
+2025-04-17 15:22:02 [main] INFO  logger.Program - Đây là thông báo info
+2025-04-17 15:22:02 [main] WARN  logger.Program - Đây là cảnh báo
+2025-04-17 15:22:02 [main] ERROR logger.Program - Đây là lỗi
+2025-04-17 15:22:02 [main] INFO  logger.Program - Người dùng admin đã đăng nhập

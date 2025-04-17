@@ -1,0 +1,7 @@
+[2025-04-17 15:54:22] INFO: Application started
+[2025-04-17 15:54:22] WARNING: This is a warning
+[2025-04-17 15:54:22] ERROR: This is an error
+[2025-04-17 15:54:22] WARNING: This warning will be logged
+[2025-04-17 15:54:22] ERROR: This error will be logged
+[2025-04-17 15:58:23] WARNING: This warning will be logged
+[2025-04-17 15:58:23] ERROR: This error will be logged
