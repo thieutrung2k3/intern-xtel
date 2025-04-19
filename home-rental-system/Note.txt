@@ -1,0 +1,2 @@
+Note:
+ - Sửa register không cho đăng ký quyền admin.
